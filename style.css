@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    display:flex;
+    justify-content:center;
+    background-color:#8CDBBD;
+}
+.form{
+    position:absolute;
+    top:30%;
+    box-shadow: 9px 9px 12px rgba(0,0,0,0.3);
+    background-color:rgb(255,189,193);
+    width:400px;
+    border-radius:15px;
+}
+.input{
+    width:100%; 
+    /* it will take 100% width of parent element (.form) but also include border and padding ,and go out of the form so use box-sizing */
+    box-sizing: border-box;
+    /* It will include border size and padding size in width and height */
+    padding:20px;
+    border-radius:15px 15px 0 0;
+    border:none;
+    font-size:25px;
+    font-family: cursive;
+    outline:none;
+}
+/* //pseudo element */
+.input::placeholder{
+    color:lightgrey;
+    /* opacity makes the text transparent */
+    opacity:0.5;
+}
+
+.list{
+    padding:0;
+    margin:0;
+}
+.list li{
+    list-style-type: none;
+    padding:20px;
+    font-size:18px;
+    font-family:cursive;;
+    border-top:dotted;
+    border-color:darkgrey;
+    position:relative;
+}
+.list li .fa-trash{
+    color:red;
+    position:absolute;
+    right:20px;
+    /* to get element at vertically middle of parent element */
+    top:50%;
+    transform:translateY(-50%); 
+    cursor:pointer;
+
+}
+.list li .fa-square-check{
+    color:green;
+    position:absolute;
+    right:50px;
+    top:50%;
+    transform:translateY(-50%); 
+    cursor:pointer;
+
+}
+
+.list li.checked{
+    color:darkgray;
+    text-decoration: line-through;
+}
+.list li.checked .fa-square-check{
+    color:darkgray;
+}
